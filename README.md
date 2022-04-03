@@ -2,10 +2,10 @@
 
 ## Analiza struktury opinii w serwisie [Ceneo.pl](https://www.ceneo.pl/)
 
-|Składowa|Selektor|Zmienna|
-|--------|--------|-------|
+|Składowa|Selektor|Zmienna|Typ zmiennej|
+|--------|--------|-------|-----------|
 |opinia|div.js_product-review|review|
-|identyfikator opinii|\[data-entry-id\]|review_id|
+|identyfikator opinii|\[data-entry-id\]|review_id|str
 |autor|span.user-post__author-name|author|
 |rekomendacja|span.user-post__author-recomendation > em|recommendation|
 |liczba gwiazdek|span.user-post__score-count|stars|
@@ -16,3 +16,9 @@
 |dla ilu nieprzydatna|button.vote-no[data-total-vote]<br>button.vote-no > span<br>span[id^=votes-no]|useless|
 |lista zalet|div.review-feature__title--positives ~ div.review-feature__item <br>div.review-feature__col:has( > div.review-feature__title--positives) > div.review-feature__item<br>div.review-feature__item:has( ~ div.review-feature__title--positives)|pros|
 |lista wad|div.review-feature__title--negatives ~ div.review-feature__item <br>div.review-feature__col:has( > div.review-feature__title--negatives) > div.review-feature__item<br>div.review-feature__item:has( ~ div.review-feature__title--negatives)|cons|
+
+## Etapy pracy nad projektem
+1) pobranie składowych pojedynczej opinii do niezaleznych zmiennych
+2) zapisanie wszystkich składowych pojedynczej opinii do obiektu słownika (dictionary)
+3) pobranie wszystkich opinii z pojedynczej strony i zapisanie ich do listy słowników
+4) pobranie wszystkich opinii o wskazanym produkcie i zapisanie ich do pliku
